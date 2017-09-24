@@ -28,8 +28,8 @@ var coinChange = function(coins, amount) {
   return min[i-1];
 };
 
-describe('Interleaving String', function() {
-  it('should determine if interleaving', function() {
+describe('Min Coin Change', function() {
+  it('should find minimum coins to for change', function() {
     assert.equal(coinChange([1, 2, 5], 11), 3);
     assert.equal(coinChange([2], 3), -1);
   });
