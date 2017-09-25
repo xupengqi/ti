@@ -47,3 +47,6 @@ describe('Trapping Rain Water', function() {
     assert.equal(trap([10,5,10]), 5);
   });
 });
+
+// Find max to the left and max to the right.
+// The minimum of the two defines the current bucket.

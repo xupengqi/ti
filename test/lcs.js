@@ -39,3 +39,30 @@ describe('Longest Common Subsequence', function() {
     assert.equal(lcs("aaaa", "abcdaaaefga"), 4);
   });
 });
+
+
+  // http://en.wikipedia.org/wiki/Longest_common_substring_problem
+  // longestCommonSubstringConstSpace: function(a,b) {
+  //   var max1 = this.lcsubHelper(a,b), max2 = this.lcsubHelper(b,a);
+  //   return max1[0]>max2[0] ? max1[1] : max2[1];
+  // },
+  // lcsubHelper: function(a,b) {
+  //   var max=0, c='';
+  //   for (var k=0; k<a.length; k++) {
+  //     var i=k,j=0,cmax=0;
+  //     while(i<a.length) {
+  //       if (a[i]==b[j]) {
+  //         cmax++;
+  //         if (cmax>max) {
+  //           max=cmax;
+  //           c=a.substr(i-max+1,max);
+  //         }
+  //       }
+  //       else {
+  //         cmax=0;
+  //       }
+  //       j++;i++;
+  //     }
+  //   }
+  //   return [max,c];
+  // },

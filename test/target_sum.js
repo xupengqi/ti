@@ -10,16 +10,11 @@ var assert = require('assert');
  * @param {number} S
  * @return {number}
  */
+
 var findTargetSumWays = function(nums, S) {
   var ways = {};
-  if (nums[0] == 0) {
-    ways[0] = 2;
-  }
-  else {
-    ways[-nums[0]] = 1;
-    ways[nums[0]] = 1;
-  }
-  for (var i=1; i<nums.length; i++) {
+  ways[0] = 1;
+  for (var i=0; i<nums.length; i++) {
     let n = nums[i];
     var totals = Object.keys(ways);
     var newWays = {};
@@ -37,7 +32,9 @@ var findTargetSumWays = function(nums, S) {
 
 describe('Target Sum Ways', function() {
   it('should find ways to reach target sum', function() {
-    // assert.equal(findTargetSumWays([1, 1, 1, 1, 1], 3), 5);
+    assert.equal(findTargetSumWays([1, 1, 1, 1, 1], 3), 5);
     assert.equal(findTargetSumWays([0,0,0,0,0,0,0,0,1], 1), 256);
   });
 });
+
+// What are the count of all possible nums at each number?
