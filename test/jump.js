@@ -25,3 +25,5 @@ describe('Jump Game', function() {
     assert.equal(canJump([3,2,1,0,4]), false);
   });
 });
+
+// Work from back.

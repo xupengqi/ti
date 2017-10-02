@@ -30,3 +30,5 @@ describe('Coin Change Ways', function() {
     assert.equal(coinChangeWays([1,3,5], 5), 3);
   });
 });
+
+// For 0 - amount, sum ways for each n-coin

@@ -47,3 +47,7 @@ describe('Max Sliding Window', function() {
     assert.deepEqual(maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3), [3,3,5,5,6,7]);
   });
 });
+
+// Keep a stack of descending numvers.
+// Pop a number out if stack.length = k
+// Pop numbers out until order is maintained.

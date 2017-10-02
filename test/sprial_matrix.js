@@ -23,22 +23,18 @@ var spiralOrder = function(matrix) {
   var result = [];
   while (i<m/2 && i < n/2) {
     for (var r = i; r< n-i; r++) {
-      // console.log('r');
       result.push(matrix[i][r]);
     }
     for (var d = i+1; d<m-i; d++) {
-      // console.log('d');
       result.push(matrix[d][r-1]);
     }
     if (d-1 > i) {
       for (var l = r-2; l>=i; l--) {
-      // console.log('l');
         result.push(matrix[d-1][l]);
       }
     }
     if (r-1 > i) {
       for (var u = d-2; u>i; u--) {
-        // console.log('u');
         result.push(matrix[u][i]);
       }
     }
@@ -55,3 +51,5 @@ describe('Sprial Matrix', function() {
     assert.deepEqual(spiralOrder([[1],[4],[7]]), [1,4,7]);
   });
 });
+
+// Only do left and up if moved right or down

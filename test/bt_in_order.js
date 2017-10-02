@@ -16,43 +16,19 @@ var assert = require('assert');
  * @return {number[]}
  */
 var inorderTraversal = function(root) {
-
+  var r = [], s = [], c = root;
+  while (s.length || c) {
+    if (c) {
+      s.push(c);
+      c = c.left;
+    }
+    else {
+      let n = s.pop();
+      r.push(n.val);
+      c = n.right;
+    }
+  }
 };
 
 // Start with an empty stack and use a pointer to point to the next item.
 // Base condition is either non-empty stack or pointer
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //   var r = [];
-  //   var q = [];
-  //   var c = root;
-  //   while (q.length > 0 || c) {
-  //     if (!c) {
-  //       var n = q.pop();
-  //       r.push(n[0]);
-  //       c = n[2];
-  //     } else {
-  //       q.push(c);
-  //       c = c[1];
-  //     }
-  //   }
-  //   return r;

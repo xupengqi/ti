@@ -1,29 +1,11 @@
 var assert = require('assert');
+var bst = require('../util/bst.js');
 
 // https://leetcode.com/problems/binary-search-tree-iterator/description/
 // Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
 
-function TreeNode(val) {
-  this.val = val;
-  this.left = this.right = null;
-}
-
-function TreeGen(vals, start, end) {
-  if (start == undefined) start = 0;
-  if (end == undefined) end = vals.length-1;
-  if (start > end) return null;
-  if (start == end) {
-    return new TreeNode(vals[start]);
-  }
-  var mid = start + Math.floor((end - start) / 2);
-  var node = new TreeNode(vals[mid]);
-  node.left = TreeGen(vals, start, mid-1);
-  node.right = TreeGen(vals, mid+1, end);
-  return node;
-}
-
 function TreeAssert(vals) {
-  var r = TreeGen(vals);
+  var r = bst.TreeGen(vals);
   var i = new BSTIterator(r), a = [];
   while (i.hasNext()) a.push(i.next());
   assert.deepEqual(a, vals);

@@ -54,6 +54,9 @@ describe('Sort Colors', function() {
     assert.deepEqual(sortColors([1,1,1,1,1,0]), [0,1,1,1,1,1]);
     assert.deepEqual(sortColors([2,1,1,1,1,1]), [1,1,1,1,1,2]);
     assert.deepEqual(sortColors([1,2,2,2,2,0,0,0,1,1]), [0,0,0,1,1,1,2,2,2,2]);
-
   });
 });
+
+// Use two pointers for end of left part and beginning of right part.
+// Backup and swap with right
+// No need to back up when swap with left because its either 0 or 1

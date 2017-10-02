@@ -22,9 +22,7 @@ var lengthOfLIS = function(nums) {
       if (nums[j] < nums[i] && max[j] >= max[i]) {
         max[i] = max[j]+1;
       }
-      if (curMax < max[i]) {
-        curMax = max[i];
-      }
+      curMax = Math.max(curMax, max[i]);
     }
   }
   return curMax;
@@ -41,3 +39,5 @@ describe('Longest Increasing Subsequence', function() {
     assert.equal(lengthOfLIS([]), 0);
   });
 });
+
+// O(n2) solution is good enough, O(nlogn) can be achieved
